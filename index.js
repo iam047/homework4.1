@@ -1,13 +1,13 @@
 Array.prototype.myForEach = function (cb) {
     for (i = 0; i < this.length; i++) {
-        cb(this[ i ], i, this);
+        cb(this[i], i, this);
     }
 };
 
 Array.prototype.myMap = function (cb) {
     var arr = [];
     for (i = 0; i < this.length; i++) {
-        arr[ i ] = cb(this[ i ], i, this);
+        arr[i] = cb(this[i], i, this);
     }
     return arr;
 };
@@ -15,10 +15,10 @@ Array.prototype.myMap = function (cb) {
 Array.prototype.mySort = function (fun) {
     for (i = 0; i < this.length; i++) {
         for (j = i + 1; j < this.length; j++) {
-            if (fun(this[ i ], this[ j ]) > 0) {
-                var arr   = this[ i ];
-                this[ i ] = this[ j ];
-                this[ j ] = arr;
+            if (fun(this[i], this[j]) > 0) {
+                var arr   = this[i];
+                this[i] = this[j];
+                this[j] = arr;
             }
         }
     }
@@ -27,8 +27,8 @@ Array.prototype.mySort = function (fun) {
 Array.prototype.myFilter = function (fun) {
     var arr = [];
     for (i = 0; i < this.length; i++) {
-        if (fun(this[ i ], i, this)) {
-            arr.push(this[ i ]);
+        if (fun(this[i], i, this)) {
+            arr.push(this[i]);
         }
     }
 
@@ -37,11 +37,11 @@ Array.prototype.myFilter = function (fun) {
 
 Array.prototype.myPush = function () {
     for (i = 0; i < arguments.length; i++) {
-        this[ this.length ] = arguments[ i ];
+        this[this.length] = arguments[i];
     }
 };
 
-var arr = [ 12, 4, 2123, 3231, 432, 212 ];
+var arr = [12, 4, 2123, 3231, 432, 212];
 
 arr.myForEach((el, i, arr) => {
     console.log('myForEach', el, i, arr);
